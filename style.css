@@ -1,0 +1,676 @@
+
+/* =========================
+   RESET & VARIABEL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #090914;
+    --card: #131326;
+    --purple: #8b5cf6;
+    --blue: #38bdf8;
+    --text: #f5f3ff;
+    --muted: #a1a1b5;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.background-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.glow-1 {
+    background: var(--purple);
+    top: 100px;
+    left: -100px;
+}
+
+.glow-2 {
+    background: var(--blue);
+    bottom: 0;
+    right: -100px;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header {
+    width: 100%;
+    padding: 22px 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff10;
+    background: #090914eF;
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span,
+footer span {
+    color: var(--purple);
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+}
+
+/* =========================
+   HERO / HOME
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 100px 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 65px;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.welcome,
+.section-label {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.gradient-text,
+.section-title span {
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero h2 {
+    color: #d1c4ff;
+    font-size: 16px;
+    margin: 18px 0;
+    font-weight: 500;
+}
+
+.description {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 490px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.primary {
+    color: white;
+    background: linear-gradient(120deg, #7c3aed, #2563eb);
+    box-shadow: 0 5px 25px #7c3aed30;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px #7c3aed60;
+}
+
+.secondary {
+    border: 1px solid #ffffff30;
+    color: white;
+}
+
+.secondary:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.socials a {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ffffff20;
+    border-radius: 12px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    background: var(--purple);
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
+.hero-image {
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+}
+
+.image-border {
+    padding: 8px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, var(--purple), var(--blue));
+    box-shadow: 0 0 60px #8b5cf625;
+    transform: rotate(2deg);
+}
+
+.image-border img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 24px;
+    background: var(--card);
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 25px;
+    left: -65px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: #19192def;
+    border: 1px solid #ffffff20;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px #0005;
+}
+
+.floating-card strong {
+    font-size: 12px;
+}
+
+.floating-card p {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 12px #4ade80;
+}
+
+/* =========================
+   SECTION UMUM
+========================= */
+
+.section {
+    padding: 85px 9%;
+}
+
+.section-label,
+.section-title {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   BIODATA
+========================= */
+
+.about-card,
+.contact-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px;
+    background: linear-gradient(135deg, #17172b, #10101e);
+    border: 1px solid #ffffff12;
+    border-radius: 22px;
+    box-shadow: 0 15px 50px #0002;
+}
+
+.about-info h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.about-info p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.biodata {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 16px;
+    background: #ffffff05;
+    border: 1px solid #ffffff0c;
+    border-radius: 12px;
+}
+
+.data-item span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.data-item strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   SKILL UMUM
+========================= */
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    padding: 27px;
+    background: var(--card);
+    border: 1px solid #ffffff12;
+    border-radius: 18px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: #8b5cf670;
+}
+
+.skill-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    color: var(--muted);
+    font-size: 12px;
+    min-height: 42px;
+}
+
+.progress {
+    height: 6px;
+    margin-top: 20px;
+    background: #ffffff12;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--purple), var(--blue));
+}
+
+.html {
+    width: 65%;
+}
+
+.css {
+    width: 50%;
+}
+
+.computer {
+    width: 75%;
+}
+
+.skill-level {
+    display: block;
+    text-align: right;
+    margin-top: 8px;
+    font-size: 10px;
+    color: var(--blue);
+}
+
+/* =========================
+   TRADING FOREX
+========================= */
+
+.trading-description {
+    max-width: 650px;
+    margin: -20px auto 35px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.trading-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.trading-card {
+    position: relative;
+    overflow: hidden;
+    padding: 28px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #151a2c, #0f1220);
+    border: 1px solid #38bdf825;
+    transition: 0.3s ease;
+}
+
+.trading-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #38bdf8, #8b5cf6);
+}
+
+.trading-card:hover {
+    transform: translateY(-6px);
+    border-color: #38bdf880;
+    box-shadow: 0 12px 35px #38bdf812;
+}
+
+.trading-icon {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 18px;
+    border-radius: 15px;
+    background: #38bdf815;
+    font-size: 27px;
+}
+
+.trading-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #f1f5ff;
+}
+
+.trading-card p {
+    color: #a5aec4;
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.trading-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #38bdf840;
+    border-radius: 8px;
+    color: #38bdf8;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.trading-note {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 25px;
+    padding: 22px;
+    border-radius: 16px;
+    background: #8b5cf610;
+    border: 1px solid #8b5cf635;
+}
+
+.trading-note > span {
+    font-size: 30px;
+}
+
+.trading-note p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.trading-note strong {
+    color: #c4b5fd;
+    font-size: 14px;
+}
+
+/* =========================
+   KONTAK
+========================= */
+
+.contact-card {
+    text-align: center;
+}
+
+.contact-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.contact-card p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 9%;
+    text-align: center;
+    border-top: 1px solid #ffffff10;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding-top: 70px;
+        gap: 40px;
+    }
+
+    .hero-image {
+        width: 240px;
+    }
+
+    .image-border img {
+        height: 320px;
+    }
+
+    .floating-card {
+        left: -30px;
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 650px) {
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .hero-image {
+        width: 220px;
+    }
+
+    .image-border img {
+        height: 280px;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .buttons,
+    .socials {
+        justify-content: center;
+    }
+
+    .floating-card {
+        left: -35px;
+        bottom: 15px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .biodata,
+    .skill-grid,
+    .trading-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .contact-card {
+        padding: 23px;
+    }
+
+    .skill-card,
+    .trading-card {
+        padding: 23px;
+    }
+
+    .trading-description {
+        margin-top: -15px;
+    }
+
+    .trading-note {
+        gap: 12px;
+        padding: 17px;
+    }
+}
